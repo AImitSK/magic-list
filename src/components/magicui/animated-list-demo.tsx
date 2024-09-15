@@ -62,10 +62,13 @@ const Notification = ({ name, description, icon, color }: Item) => {
     return (
       <figure
         className={cn(
-          "relative mx-auto min-h-fit w-full cursor-pointer overflow-hidden rounded-xl p-4", // w-full sorgt für volle Breite, rounded-xl behält die abgerundeten Ecken
-          "bg-white shadow-md hover:shadow-lg transition-shadow", // behält den Schatten und das Hover-Design bei
-          "dark:bg-gray-800 dark:shadow-lg dark:hover:shadow-xl", // Dark Mode Support
-          "border border-gray-200 dark:border-gray-700" // behält die Grenze der Boxen
+          "relative w-full cursor-pointer overflow-hidden rounded-xl p-4",
+          // Box shadow for light mode
+          "bg-white shadow-md hover:shadow-lg transition-shadow",
+          // Dark mode styles
+          "dark:bg-gray-800 dark:shadow-lg dark:hover:shadow-xl",
+          // Border and padding
+          "border border-gray-200 dark:border-gray-700"
         )}
       >
         <div className="flex items-center gap-3">
@@ -94,11 +97,12 @@ const Notification = ({ name, description, icon, color }: Item) => {
     return (
       <div
         className={cn(
-          "relative flex flex-col gap-4 w-full h-[400px] mx-auto p-6 overflow-y-hidden", // Entferne die max-w-[500px], damit die Breite flexibel ist
+          // Entferne den Rahmen und den Hintergrund der äußeren Box
+          "relative flex flex-col gap-4 w-full h-[400px] mx-auto overflow-y-hidden",
           className
         )}
       >
-        <AnimatedList>
+        <AnimatedList delay={2000}> {/* Setze den delay auf 3000ms (3 Sekunden) */}
           {notifications.map((item, idx) => (
             <Notification {...item} key={idx} />
           ))}
@@ -106,7 +110,3 @@ const Notification = ({ name, description, icon, color }: Item) => {
       </div>
     );
   }
-  
-  
-  
-  
