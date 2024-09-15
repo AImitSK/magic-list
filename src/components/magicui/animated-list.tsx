@@ -10,7 +10,7 @@ export interface AnimatedListProps {
 }
 
 export const AnimatedList = React.memo(
-    ({ className, children, delay = 2000 }: AnimatedListProps) => { // Ändere die Standardverzögerung auf 3000ms (3 Sekunden)
+    ({ className, children, delay = 1000 }: AnimatedListProps) => { // Ändere die Standardverzögerung auf 3000ms (3 Sekunden)
       const [index, setIndex] = useState(0);
       const childrenArray = React.Children.toArray(children);
   

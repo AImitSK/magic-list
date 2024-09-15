@@ -102,7 +102,7 @@ const Notification = ({ name, description, icon, color }: Item) => {
           className
         )}
       >
-        <AnimatedList delay={2000}> {/* Setze den delay auf 3000ms (3 Sekunden) */}
+        <AnimatedList delay={1500}> {/* Setze den delay auf 3000ms (3 Sekunden) */}
           {notifications.map((item, idx) => (
             <Notification {...item} key={idx} />
           ))}
